@@ -1,0 +1,28 @@
+site_name: Dial3
+
+nav:
+- Home: 'index.md'
+
+- About:
+    Architecture: './About_dial3/architecture.md'
+    Filesystem: './About_dial3/architecture.md'
+    
+- Getting Statrted:
+    Create Account: './Getting_started/create_account.md'
+    Connecting: './Getting_started/connecting_dial3.md'
+    
+- Run a Computation:
+    Intercative or batch: './Run_computation/interactive_or_batch.md'
+    Scheduler: './Run_computation/Scheduler.md'
+    Submit a Job: './Run_computation/submit_job.md'
+    Job types: './Run_computation/job_types.md'
+    Monitor jobs: './Run_computation/monitor_jobs.md'
+    
+- Analyse code:
+    Install Arm Forge: './Analyse_code/Install_arm_forge.md'
+    Performance Report: './Analyse_code/Perf_report.md'
+    Profile your Code: './Analyse_code/Profile_code.md'
+
+theme: 
+  name: readthedocs
+      
