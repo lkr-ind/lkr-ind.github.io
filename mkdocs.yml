@@ -22,6 +22,10 @@ nav:
     Install Arm Forge: './Analyse_code/Install_arm_forge.md'
     Performance Report: './Analyse_code/Perf_report.md'
     Profile your Code: './Analyse_code/Profile_code.md'
+    Debug your Code: './Analyse_code/Debug_code.md'
+    
+- Support:
+    Support: './Support/Support.md'
 
 theme: 
   name: readthedocs
