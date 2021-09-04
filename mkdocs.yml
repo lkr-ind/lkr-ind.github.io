@@ -1,11 +1,11 @@
-site_name: Dial3
+site_name: DIaL3
 
 nav:
 - Home: 'index.md'
 
 - About:
     Architecture: './About_dial3/architecture.md'
-    Filesystem: './About_dial3/architecture.md'
+    Filesystem: './About_dial3/filesystem.md'
     
 - Getting Statrted:
     Create Account: './Getting_started/create_account.md'
@@ -18,14 +18,16 @@ nav:
     Job types: './Run_computation/job_types.md'
     Monitor jobs: './Run_computation/monitor_jobs.md'
     
-- Analyse code:
+- Analyse code using Arm Forge:
+    What is Arm Forge: './Analyse_code/about_arm_forge.md'
     Install Arm Forge: './Analyse_code/Install_arm_forge.md'
     Performance Report: './Analyse_code/Perf_report.md'
     Profile your Code: './Analyse_code/Profile_code.md'
     Debug your Code: './Analyse_code/Debug_code.md'
     
-- Support:
+- Support: 
     Support: './Support/Support.md'
+
 
 theme: 
   name: readthedocs
