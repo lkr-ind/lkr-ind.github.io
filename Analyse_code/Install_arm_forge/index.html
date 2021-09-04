@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Install Arm Forge - Dial3</title>
+  <title>Install Arm Forge - DIaL3</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -37,7 +37,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> Dial3</a>
+        <a href="../.." class="icon icon-home"> DIaL3</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -54,7 +54,7 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../About_dial3/architecture/">Architecture</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../About_dial3/architecture/">Filesystem</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../About_dial3/filesystem/">Filesystem</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Getting Statrted</span></p>
@@ -77,13 +77,24 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../Run_computation/monitor_jobs/">Monitor jobs</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Analyse code</span></p>
+                <p class="caption"><span class="caption-text">Analyse code using Arm Forge</span></p>
                 <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../about_arm_forge/">What is Arm Forge</a>
+                    </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Install Arm Forge</a>
+    <ul class="current">
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Perf_report/">Performance Report</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Profile_code/">Profile your Code</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Debug_code/">Debug your Code</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Support</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Support/Support/">Support</a>
                     </li>
                 </ul>
       </div>
@@ -95,7 +106,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">Dial3</a>
+        <a href="../..">DIaL3</a>
       </nav>
 
       
@@ -107,7 +118,7 @@
     
       
         
-          <li>Analyse code &raquo;</li>
+          <li>Analyse code using Arm Forge &raquo;</li>
         
       
     
@@ -123,7 +134,32 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="install-arm-forge-on-your-pc">Install Arm forge on your PC</h1>
+<p>You can install Arm forge on your local system and use the locally installed Arm forge to view your code profile. This method will be faster that X forwarding (as mentioned in <a href="../about_arm_forge/">What is Arm Forge</a>). </p>
+<p>Arm forge describes this way of working as “Reverse connect” in which we generate the profiles offline (by usual job submission scripts) and instead of using -X flag to use a GUI, we install the software on our local system. Once we have the software on our local system, we connect it with the one present on the server (DIaL3 in this case).</p>
+<p>Please follow the steps below to install Arm forge and connect it with the server.</p>
+<p><strong>(A).</strong> First download the Arm forge from the official website (https://developer.arm.com/tools-and-software/server-and-hpc/downloads/arm-forge)</p>
+<p><strong>(B).</strong> Install the arm forge in your desired location. For Linux, the downloaded files contain a file called ‘installer’. Double clicking on it will install the software in your desired location.</p>
+<p><strong>(C).</strong> Change to the directory where you installed the software. For example, I installed it in /home/my_preferred_location/arm/forge/21.0.3.</p>
+<pre><code class="language-bash">$ cd /home/my_preferred_location/arm/forge/21.0.3.
+</code></pre>
+<p><strong>(D).</strong>. Change directory to the bin directory.</p>
+<pre><code class="language-bash">$ cd /home/my_preferred_location/arm/forge/21.0.3.
+</code></pre>
+<p><strong>(E).</strong>. Launch the arm forge software.</p>
+<pre><code class="language-bash">$ ./forge
+</code></pre>
+<p><strong>(F).</strong> Go to the remote launch option in the main GUI and click configure.</p>
+<p><img alt="" src="../../Images/Arm/configure.png" /></p>
+<p><strong>(G).</strong> After clicking configure, you will be presented to add a new connection. Click on add and fill in the following values (Please adjust accordingly).</p>
+<ul>
+<li><strong>Connection Name:</strong> Fill in any name you want (e.g. Dial3)</li>
+<li><strong>Host name:-</strong> Enter the host name to which you want to connect to. Arm forge expects these values to be a space separated list. (For dial, you will only need to enter the first value i.e. ignore the value after space). Eg. :- <a href="mailto:dc-ragt1@dial.dirac.ac.uk">dc-ragt1@dial.dirac.ac.uk</a>  <a href="mailto:dc-ragt1@d3-login02.rcs.le.ac.uk">dc-ragt1@d3-login02.rcs.le.ac.uk</a></li>
+<li><strong>Remote Installation Directory:-</strong> /cm/shared/apps/arm/forge/21.0.2 (Please do not change this).</li>
+</ul>
+<p><img alt="" src="../../Images/Arm/connection_name.png" /></p>
+<p><strong>(H).</strong> Click Ok, then close. Now you will see an entry with the Connection name (here Dial3) in the main GUI under remote launch. Please click on this name and you will be prompted to enter your password twice. First to connect with Dial2.5 and then to Dial3.</p>
+<p><em>Please note that this is a one time setup and you do not need to do it again. You will only need to connect with the server anytime you want to use the Arm forge.</em></p>
               
             </div>
           </div>
@@ -134,7 +170,7 @@
         <a href="../Perf_report/" class="btn btn-neutral float-right" title="Performance Report">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../Run_computation/monitor_jobs/" class="btn btn-neutral" title="Monitor jobs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../about_arm_forge/" class="btn btn-neutral" title="What is Arm Forge"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -160,7 +196,7 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../Run_computation/monitor_jobs/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../about_arm_forge/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../Perf_report/" style="color: #fcfcfc">Next &raquo;</a></span>
