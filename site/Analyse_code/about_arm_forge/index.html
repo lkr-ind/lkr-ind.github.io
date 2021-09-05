@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Create Account - DIaL3</title>
+  <title>What is Arm Forge - DIaL3</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Create Account";
-    var mkdocs_page_input_path = "Getting_started/create_account.md";
+    var mkdocs_page_name = "What is Arm Forge";
+    var mkdocs_page_input_path = "Analyse_code/about_arm_forge.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -58,10 +58,10 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Getting Statrted</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Create Account</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/create_account/">Create Account</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../connecting_dial3/">Connecting</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/connecting_dial3/">Connecting</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Run a Computation</span></p>
@@ -78,16 +78,22 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Analyse code using Arm Forge</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Analyse_code/about_arm_forge/">What is Arm Forge</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">What is Arm Forge</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#use-arm-forge-by-x-forwarding">Use Arm Forge by X forwarding</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#use-arm-forge-by-installing-on-your-pc">USE Arm forge by Installing on your PC</a>
+    </li>
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Analyse_code/Install_arm_forge/">Install Arm Forge</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../Install_arm_forge/">Install Arm Forge</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Analyse_code/Perf_report/">Performance Report</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../Perf_report/">Performance Report</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Analyse_code/Profile_code/">Profile your Code</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../Profile_code/">Profile your Code</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Analyse_code/Debug_code/">Debug your Code</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../Debug_code/">Debug your Code</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Support</span></p>
@@ -116,11 +122,11 @@
     
       
         
-          <li>Getting Statrted &raquo;</li>
+          <li>Analyse code using Arm Forge &raquo;</li>
         
       
     
-    <li>Create Account</li>
+    <li>What is Arm Forge</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -132,7 +138,60 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="arm-forge">Arm Forge</h1>
+<p>Arm forge is one of the leading HPC and server development tools used in research, academia and industry for high performance codes written either in C, C++, Fortran or Python. Arm forge has three major components:-</p>
+<ol>
+<li><a href="../Perf_report/">Arm Performance Reports</a></li>
+<li><a href="../Profile_code/">Arm MAP</a></li>
+<li><a href="../Debug_code/">Arm DDT</a></li>
+</ol>
+<p>To use Arm forge on DiAL3, please load the Arm forge module by the following command.</p>
+<p><code>module load arm/forge/21.0.2</code>.</p>
+<p>You can use Arm forge in two different ways:-</p>
+<ol>
+<li>Using X forwarding (might be slow)</li>
+<li>By installing Arm forge on your local computer (No License needed).</li>
+</ol>
+<h2 id="use-arm-forge-by-x-forwarding">Use Arm Forge by X forwarding</h2>
+<p>First login to DiAL3 cluster by using the following command (please pay attention to the -X flag in the command).</p>
+<pre><code class="language-bash">$ ssh -X your_username@dial3.dirac.ac.uk 
+</code></pre>
+<p>Enter your password to login. Once you have logged in, load the Arm forge module by entering the following command in the terminal.</p>
+<pre><code class="language-bash">$ module load arm/forge/21.0.2
+</code></pre>
+<p>To see what all paths and variables have been added to your environment by the above load command, type the following.</p>
+<pre><code class="language-bash">$ module display arm/forge/21.0.2
+</code></pre>
+<p>This will show the following output on your screen.</p>
+<pre><code class="language-bash">----------------------------------------------------------------------------
+   /cm/shared/modulefiles/arm/forge/21.0.2:
+----------------------------------------------------------------------------
+whatis(&quot;Loads the ARM Forge - MPI profiler and debugger (21.0.2) software environment &quot;)
+prepend_path(&quot;PATH&quot;,&quot;/cm/shared/apps/arm/forge/21.0.2/bin&quot;)
+prepend_path(&quot;LIBRARY_PATH&quot;,&quot;/cm/shared/apps/arm/forge/21.0.2/lib&quot;)
+prepend_path(&quot;LD_RUN_PATH&quot;,&quot;/cm/shared/apps/arm/forge/21.0.2/lib&quot;)
+prepend_path(&quot;CPATH&quot;,&quot;/cm/shared/apps/arm/forge/21.0.2/lib&quot;)
+setenv(&quot;ARM_LICENSE_DIR&quot;,&quot;/cm/shared/apps/arm/forge/21.0.2/licences&quot;)
+help([[  forge/21.0.2 - loads the ARM Forge - MPI profiler and debugger (21.0.2) software environment
+
+]])
+</code></pre>
+<p>If you see the first entry in the prepend path, you will see the location where all binaries of arm forge are located. Change to that directory to see what all binaries are there.</p>
+<pre><code class="language-bash">$ cd /cm/shared/apps/arm/forge/21.0.2/bin
+
+#List the contents of that directory.
+$ ls
+allinea-client  ddt-mpirun    forge-mpirun             map
+ddt             forge         forge-probe              perf-report
+ddt-client      forge-client  make-profiler-libraries
+
+#Open the forge GUI by using the following command. 
+$ ./forge
+
+</code></pre>
+<p>Now you can use this GUI to <a href="../Debug_code/">debug your code</a> or <a href="../Profile_code/">view profile reports</a>.</p>
+<h2 id="use-arm-forge-by-installing-on-your-pc">USE Arm forge by Installing on your PC</h2>
+<p>You can also use Arm forge by first installing it on your PC (you do not need a license for that) and using that to view your code profile. For more details, please click <a href="../Install_arm_forge/">Install Arm Forge</a>.</p>
               
             </div>
           </div>
@@ -140,10 +199,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../connecting_dial3/" class="btn btn-neutral float-right" title="Connecting">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Install_arm_forge/" class="btn btn-neutral float-right" title="Install Arm Forge">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../About_dial3/filesystem/" class="btn btn-neutral" title="Filesystem"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Run_computation/monitor_jobs/" class="btn btn-neutral" title="Monitor jobs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -169,10 +228,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../About_dial3/filesystem/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../Run_computation/monitor_jobs/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../connecting_dial3/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../Install_arm_forge/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
