@@ -11,7 +11,13 @@ nav:
     Create Account: './Getting_started/create_account.md'
     Connecting: './Getting_started/connecting_dial3.md'
     
+- Software:
+    Software Installed on DIaL3: './Software/software_installed.md'
+    Software Module System: './Software/module_system.md'
+    Python: './Software/Python.md'
+     
 - Run a Computation:
+    Dos and Don'ts: './Run_computation/dos_and_donts.md'
     Intercative or batch: './Run_computation/interactive_or_batch.md'
     Scheduler: './Run_computation/Scheduler.md'
     Submit a Job: './Run_computation/submit_job.md'

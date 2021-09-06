@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Performance Report - DIaL3</title>
+  <title>Contact - DIaL3</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Performance Report";
-    var mkdocs_page_input_path = "Analyse_code/Perf_report.md";
+    var mkdocs_page_name = "Contact";
+    var mkdocs_page_input_path = "Support/Contact.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -78,27 +78,27 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Analyse code using Arm Forge</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../about_arm_forge/">What is Arm Forge</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Analyse_code/about_arm_forge/">What is Arm Forge</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Install_arm_forge/">Install Arm Forge</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Analyse_code/Install_arm_forge/">Install Arm Forge</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Performance Report</a>
-    <ul class="current">
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Analyse_code/Perf_report/">Performance Report</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Profile_code/">Profile your Code</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Analyse_code/Profile_code/">Profile your Code</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Debug_code/">Debug your Code</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Analyse_code/Debug_code/">Debug your Code</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Getting Help</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Support/Contact/">Contact</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Contact</a>
+    <ul class="current">
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Support/FAQ/">Frequently asked questions</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../FAQ/">Frequently asked questions</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Support/Support_staff/">Support Staff</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../Support_staff/">Support Staff</a>
                     </li>
                 </ul>
       </div>
@@ -122,11 +122,11 @@
     
       
         
-          <li>Analyse code using Arm Forge &raquo;</li>
+          <li>Getting Help &raquo;</li>
         
       
     
-    <li>Performance Report</li>
+    <li>Contact</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -138,58 +138,10 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="arm-performance-reports">Arm Performance Reports</h2>
-<p>ARM Performance Reports is a low overhead tool that provides a high-level overview of your application’s performance including computation, communication, and I/O.  This tool provides a one-page text or HTML summary about the application's performance. </p>
-<p>To use this tool, all you need to do is prefix your execution command with <code>perf-report</code>. Please be advised that you do not need to recompile your code with any additional flags for generating a performance report. Instead, use the flags which you believe gives the best performance for your code.</p>
-<p>You can use the following command for this purpose.</p>
-<pre><code class="language-bash">#For a single core Job.
-$ perf-report &lt;executable&gt;
-
-#For a MPI job.
-$ perf-report mpirun -n 4 &lt;executable&gt;
-</code></pre>
-<p>You can also submit a job to scheduler to automatically generate the performance report for you. You can use the following example script (for an Hybrid MPI + OpenMP job) to generate the performance report for your code.</p>
-<pre><code class="language-bash">#!/bin/bash --login
-
-#SBATCH -J Your_Job_Name
-#SBATCH -o Your_Object_File_Name.o%j
-#SBATCH -e Your_Error_File_Name.e%j
-#SBATCH -p Partition_on_which_to_run_code
-##SBATCH -A Account
-#SBATCH --nodes=8
-#SBATCH --ntasks=16
-#SBATCH --ntasks-per-node=2
-#SBATCH --exclusive
-#SBATCH -t HH:MM:SS
-
-export nodecnt=$SLURM_JOB_NUM_NODES
-export corecnt=`expr ${SLURM_CPUS_ON_NODE} \* ${nodecnt}`
-export mpicnt=$SLURM_NTASKS
-export threadspermpi=`expr ${SLURM_CPUS_ON_NODE} \/ ${SLURM_NTASKS_PER_NODE}`
-export threadcnt=`expr ${mpicnt} \* ${threadspermpi}`
-export OMP_NUM_THREADS=$threadspermpi
-export OMP_PLACES=cores
-
-if [ $threadcnt -ne $corecnt ]
-then
-  echo &quot;Error, mismatch between requested and available hardware!&quot;
-  exit -1
-fi
-
-#Dial3
-module purge
-module load intel-parallel-studio/cluster.2019.5
-module load arm/forge/21.0.2
-
-#This will prevent Arm forge from closing if it cannot find license within a specified limit. 
-export ALLINEA_NO_TIMEOUT=1
-
-export EXE_DIR=Your_executable_directory_path
-
-perf-report  --processes=$SLURM_NTASKS --procs-per-node $SLURM_NTASKS_PER_NODE --mpi=intel-mpi $EXE_DIR/Your_executable
-</code></pre>
-<p>This will generate a <code>.html</code> file and <code>.txt</code> file which will show the various details about your code such as total run time, time consumed in MPI, whether code is compute bound or I/O bound etc. You can open the <code>.html</code> file in any browser. A sample image of performance report is shown below for your reference.</p>
-<p><img alt="" src="../../Images/Arm/Perf_report_image.png" /></p>
+                <h1 id="contact">Contact</h1>
+<p>If you need any assitance in using DIaL3 services, please send a suport request to <a href="">leicester.support@dirac.ac.uk</a>, and our team will try to help you as soon as possible. In your Email, please share as much detail as possible about your query.</p>
+<p><img alt="" src="https://imgs.xkcd.com/comics/rtfm.png" />   </p>
+<p><strong>Image Credit:</strong> <a href="https://xkcd.com/293/">https://xkcd.com/293/</a></p>
               
             </div>
           </div>
@@ -197,10 +149,10 @@ perf-report  --processes=$SLURM_NTASKS --procs-per-node $SLURM_NTASKS_PER_NODE -
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Profile_code/" class="btn btn-neutral float-right" title="Profile your Code">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../FAQ/" class="btn btn-neutral float-right" title="Frequently asked questions">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../Install_arm_forge/" class="btn btn-neutral" title="Install Arm Forge"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Analyse_code/Debug_code/" class="btn btn-neutral" title="Debug your Code"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -226,10 +178,10 @@ perf-report  --processes=$SLURM_NTASKS --procs-per-node $SLURM_NTASKS_PER_NODE -
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Install_arm_forge/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../Analyse_code/Debug_code/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../Profile_code/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../FAQ/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
