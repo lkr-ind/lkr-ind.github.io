@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Scheduler - DIaL3</title>
+  <title>Batch System - DIaL3</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Scheduler";
-    var mkdocs_page_input_path = "Run_computation/Scheduler.md";
+    var mkdocs_page_name = "Batch System";
+    var mkdocs_page_input_path = "Run_computation/batch_system.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,15 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../interactive_or_batch/">Intercative or batch</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Scheduler</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Batch System</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#creating-a-job-script">Creating a job script</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-pass-command-line-parameters-to-the-job-script">How to pass command-line parameters to the job script</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Slurm_workload_manager/">SLURM Worload Manager</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../submit_job/">Submit a Job</a>
                     </li>
@@ -135,7 +143,7 @@
         
       
     
-    <li>Scheduler</li>
+    <li>Batch System</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -147,7 +155,32 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="batch-system">Batch system</h1>
+<p>The DiaL3 system is shared across many users and to ensure fair use everyone must do their computations by submitting jobs through a batch system that will execute the applications on the available resources.</p>
+<p>The batch system on DiAL3 is <a href="https://slurm.schedmd.com/">SLURM</a> (Simple Linux Utility for Resource Management.)</p>
+<h2 id="creating-a-job-script">Creating a job script</h2>
+<p>To run a job on the system you need to create a job script. A job script is a regular shell script (bash) with some directives specifying the number of CPUs, memory, etc., that will be interpreted by the batch system upon submission.</p>
+<p>You can find job script examples in <a href="https://hpc-uit.readthedocs.io/en/latest/jobs/examples.html#job-script-examples">Job script examples</a>.</p>
+<p>After you wrote your job script as shown in the examples, you can submit it to the scheduler by using the following command:</p>
+<pre><code class="language-bash">$ sbatch jobscript.sh
+</code></pre>
+<h2 id="how-to-pass-command-line-parameters-to-the-job-script">How to pass command-line parameters to the job script</h2>
+<p>It is sometimes convenient if you do not have to edit the job script every time you want to change the input file. Or perhaps you want to submit hundreds of jobs and loop over a range of input files. For this it is handy to pass command-line parameters to the job script. </p>
+<p>In SLURM you can do this by:</p>
+<pre><code class="language-bash">$ sbatch myscript.sh myinput myoutput
+</code></pre>
+<p>And then you can pick the parameters up inside the job script:</p>
+<pre><code class="language-bash">#!/bin/bash
+
+#SBATCH ...
+#SBATCH ...
+...
+
+# argument 1 is myinput
+# argument 2 is myoutput
+mybinary.x &lt; ${1} &gt; ${2}
+</code></pre>
+<p>Please note that any command starting with <code>#SBATCH</code> is an instruction to the scheduler and not a comment.</p>
               
             </div>
           </div>
@@ -155,7 +188,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../submit_job/" class="btn btn-neutral float-right" title="Submit a Job">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Slurm_workload_manager/" class="btn btn-neutral float-right" title="SLURM Worload Manager">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../interactive_or_batch/" class="btn btn-neutral" title="Intercative or batch"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -187,7 +220,7 @@
       <span><a href="../interactive_or_batch/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../submit_job/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../Slurm_workload_manager/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

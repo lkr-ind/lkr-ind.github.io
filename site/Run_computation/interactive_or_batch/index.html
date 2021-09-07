@@ -78,8 +78,28 @@
                     <li class="toctree-l1"><a class="reference internal" href="../dos_and_donts/">Dos and Don'ts</a>
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Intercative or batch</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#interactive-processing">Interactive processing</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#when-should-you-use-interactive-processing">When should you use interactive processing?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#what-if-you-need-to-run-longer-processes-interactively">What if you need to run longer processes interactively?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#batch-processing">Batch processing</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#what-is-batch-processing">What is batch processing?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#when-should-you-use-batch-processing">When should you use batch processing?</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Scheduler/">Scheduler</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../batch_system/">Batch System</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Slurm_workload_manager/">SLURM Worload Manager</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../submit_job/">Submit a Job</a>
                     </li>
@@ -147,7 +167,31 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="interactive-or-batch">Interactive or batch</h1>
+<p>You can run computations interactively or in batch.</p>
+<h2 id="interactive-processing">Interactive processing</h2>
+<p>Interactive processing is the simplest way to work on a system. You log in, run  commands which execute immediately, and log off when you've finished.  You can use either the command line or a graphical environment.</p>
+<p>Interactive jobs run directly on the limited number of login nodes (servers) on  each cluster. <strong>DiAL3</strong> has two login nodes. Although  user login sessions are spread across these nodes, interactive processes will be competing with each other.</p>
+<h3 id="when-should-you-use-interactive-processing">When should you use interactive processing?</h3>
+<ul>
+<li>Short tasks</li>
+<li>Tasks that require frequent user interaction</li>
+<li>Graphically intensive tasks</li>
+</ul>
+<p>The design of <strong>DIaL3</strong> is strongly biased towards batch jobs. It has 200  compute nodes and only two login nodes. Therefore interactive processes  on ALICE shouldn't take more than a few minutes of CPU time.</p>
+<p>There are hard limits applied which means  that a process will be killed if it uses more than a few -----  hours of CPU time on the login nodes. Furthermore, should the  administrators be alerted to heavy processing on the login nodes,  those processes are likely to be killed with no warning in order to  ensure the login nodes remain responsive for everyone.</p>
+<h3 id="what-if-you-need-to-run-longer-processes-interactively">What if you need to run longer processes interactively?</h3>
+<p>You can submit jobs to the scheduler for interactive running. These jobs  provide a login to one of the compute nodes with the requested resources dedicated to you. These jobs support X-forwarding so graphical  applications will work as normal. For more information, see <a href="https://uniofleicester.sharepoint.com/sites/Research-Computing/SitePages/job-types-hpc.aspx#interactive-jobs">Interactive jobs</a>.</p>
+<h2 id="batch-processing">Batch processing</h2>
+<h3 id="what-is-batch-processing">What is batch processing?</h3>
+<p>Batch processing is more complex because work has to carefully planned and  able to run without user interaction. Batch jobs are submitted to a <a href="https://uniofleicester.sharepoint.com/sites/Research-Computing/SitePages/scheduler-hpc.aspx">job scheduler</a> and run on the first available compute node(s). Once submitted, you can log off and wait for the jobs to complete, with the option to be sent an  email when this has happened. Although batch jobs may have to wait in a  queue before running, they are then given a dedicated set of resources  to ensure that they complete as quickly as possible.</p>
+<h3 id="when-should-you-use-batch-processing">When should you use batch processing?</h3>
+<ul>
+<li>Longer running processes</li>
+<li>Parallel processes</li>
+<li>Running large numbers of short jobs simultaneously</li>
+<li>Tasks that can be left running for a significant amount of time without any interaction</li>
+</ul>
               
             </div>
           </div>
@@ -155,7 +199,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Scheduler/" class="btn btn-neutral float-right" title="Scheduler">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../batch_system/" class="btn btn-neutral float-right" title="Batch System">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../dos_and_donts/" class="btn btn-neutral" title="Dos and Don'ts"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -187,7 +231,7 @@
       <span><a href="../dos_and_donts/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../Scheduler/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../batch_system/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

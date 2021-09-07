@@ -78,6 +78,12 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#how-to-unload-a-module">How to unload a module?</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-see-which-all-environment-variables-are-modified-by-loading-a-module">How to see which all environment variables are modified by loading a module?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-switch-to-a-different-version-of-a-module">How to switch to a different version of a module?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-unload-all-modules">How to unload all modules?</a>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Python/">Python</a>
@@ -89,7 +95,9 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../Run_computation/interactive_or_batch/">Intercative or batch</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Run_computation/Scheduler/">Scheduler</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Run_computation/batch_system/">Batch System</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Run_computation/Slurm_workload_manager/">SLURM Worload Manager</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../Run_computation/submit_job/">Submit a Job</a>
                     </li>
@@ -185,6 +193,30 @@
 <h2 id="how-to-unload-a-module">How to unload a module?</h2>
 <p>To unload a module, please use the following:</p>
 <pre><code class="language-bash">$ module unload gcc/11.1.0/xu5zmz
+</code></pre>
+<h2 id="how-to-see-which-all-environment-variables-are-modified-by-loading-a-module">How to see which all environment variables are modified by loading a module?</h2>
+<p>To get more details about all the environmental variables that are added or modified by loading a module, please use the either of the two commands <code>module display gcc</code> or <code>module show gcc</code>. For example, if you type the following in your terminal,</p>
+<pre><code class="language-bash">$ module display gcc
+</code></pre>
+<p>You will get an output similar to the following:</p>
+<pre><code class="language-bash">----------------------------------------------------------------------------
+   /cm/local/modulefiles/gcc/10.2.0:
+----------------------------------------------------------------------------
+whatis(&quot;adds GNU Cross Compilers to your environment variables &quot;)
+prepend_path(&quot;PATH&quot;,&quot;/cm/local/apps/gcc/10.2.0/bin&quot;)
+prepend_path(&quot;LD_LIBRARY_PATH&quot;,&quot;/cm/local/apps/gcc/10.2.0/lib:/cm/local/apps/gcc/10.2.0/lib64:/cm/local/apps/gcc/10.2.0/lib32&quot;)
+help([[ Adds GNU Cross Compilers to your environment variables,
+]])
+
+</code></pre>
+<p>From above output, it can be clearly seen that the <code>gcc</code> module adds values to the <code>PATH</code> and <code>LD_LIBRARY_PATH</code> variables.</p>
+<h2 id="how-to-switch-to-a-different-version-of-a-module">How to switch to a different version of a module?</h2>
+<p>To switch to a different version of a module, you can use the <code>module switch older_version new_version</code> command as shown below.</p>
+<pre><code class="language-bash">$ module switch gcc gcc/11.1.0 
+</code></pre>
+<h2 id="how-to-unload-all-modules">How to unload all modules?</h2>
+<p>To remove all modules from your environment, please use the following command.</p>
+<pre><code class="language-bash">$ module purge
 </code></pre>
               
             </div>
