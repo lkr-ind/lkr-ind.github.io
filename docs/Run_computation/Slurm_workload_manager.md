@@ -46,7 +46,13 @@ echo $SLURM_NTASKS_PER_NODE
 echo $SLURM_JOB_NODELIST
 ```
 
-On DiRAC 3 submitting the script we get:
+For submitting the above script to the job scheduler, use the following command.
+
+```bash
+$ sbatch your_job_script.sh
+```
+
+On DIaL3, the above script will lead to the following output:
 
 ```
 6

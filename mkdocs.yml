@@ -21,7 +21,7 @@ nav:
     Intercative or batch: './Run_computation/interactive_or_batch.md'
     Batch System: './Run_computation/batch_system.md'
     SLURM Worload Manager: './Run_computation/Slurm_workload_manager.md'
-    Submit a Job: './Run_computation/submit_job.md'
+    Interactive Job: './Run_computation/interactive_job.md'
     Job types: './Run_computation/job_types.md'
     Monitor jobs: './Run_computation/monitor_jobs.md'
     
