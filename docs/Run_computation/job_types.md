@@ -2,10 +2,10 @@
 
 There are various types of jobs that you can run on DIaL3 such as:-
 
-1. [Array jobs](#Array-jobs)
-2. [OpenMP jobs](#Openmp-jobs)
-3. [MPI jobs](#MPI-jobs)
-4. [Hybrid MPI/OpenMP jobs](#Hybrid-MPI/OpenMP-jobs)
+1. **Array jobs**
+2. **OpenMP jobs**
+3. **MPI jobs**
+4. **Hybrid MPI/OpenMP jobs**
 
 We first start with a basic script explaining some details and then we present the specific example scripts of various jobs types mentioned above.
 

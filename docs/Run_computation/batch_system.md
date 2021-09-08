@@ -8,7 +8,7 @@ The batch system on DiAL3 is [SLURM](https://slurm.schedmd.com/) (Simple Linux U
 
 To run a job on the system you need to create a job script. A job script is a regular shell script (bash) with some directives specifying the number of CPUs, memory, etc., that will be interpreted by the batch system upon submission.
 
-You can find job script examples in [Job script examples](https://hpc-uit.readthedocs.io/en/latest/jobs/examples.html#job-script-examples).
+You can find job script examples in [Job script examples](./job_types.md)
 
 After you wrote your job script as shown in the examples, you can submit it to the scheduler by using the following command:
 

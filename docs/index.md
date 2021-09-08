@@ -11,11 +11,11 @@ The DiRAC HPC resources are classified into 4 categories namely:-
 
 For more information about DiRAC service, please see the link: [https://dirac.ac.uk/](https://dirac.ac.uk/) .
 
-Data Intensive at Leicester (DIaL) is a term collectively used for two HPC systems at UoL: DiAL2.5 and DiAL3. For more information about DiAL2.5, please follow [Dial2.5](https://www2.le.ac.uk/offices/itservices/ithelp/services/hpc/dirac) (You will have to login using your UoL username and password).
+Data Intensive at Leicester (DIaL) is a term collectively used for two HPC systems at UoL: DIaL2.5 and DIaL3. For more information about DIaL2.5, please follow [DIaL2.5](https://www2.le.ac.uk/offices/itservices/ithelp/services/hpc/dirac) (You will have to login using your UoL username and password).
 
-DiAL3 is a new HPC facility that has been recently purchased under the grant of 2 million pounds provided by Science and Technology Facilities Council (STFC). The system will be available for production usage from September 30, 2021. The following image shows the DiAL3 HPC facility at UoL.![DiAL image](./Images/Cluster/dial3.jpg)
+DIaL3 is a new HPC facility that has been recently purchased under the grant of 2 million pounds provided by Science and Technology Facilities Council (STFC). The system will be available for production usage from September 30, 2021. The following image shows the DIaL3 HPC facility at UoL.![DiAL image](./Images/Cluster/dial3.jpg)
 
-For more information about DiAL3 and its architecture, please visit the following links.
+For more information about DIaL3 and its architecture, please visit the following links.
 
 1. [Architecture](./About_dial3/architecture.md)
 2. [FileSystem](./About_dial3/architecture.md)
