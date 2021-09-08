@@ -119,11 +119,11 @@ It is used to view job and job step information for jobs managed by Slurm.
 
 > Display information about jobs and job steps in all partitions. This causes information to be displayed about partitions that are configured as hidden, partitions that are unavailable to a user's group, and federated jobs that are in a "revoked" state.
 
-**-i <seconds>, --iterate=<seconds>**
+**-i < seconds >, --iterate=< seconds >**
 
 > Repeatedly gather and report the requested information at the interval specified (in seconds). By default, prints a time stamp with the header.
 
-**-u <user_list>, --user=<user_list>**
+**-u < user_list >, --user=< user_list >**
 
 > Request jobs or job steps from a comma separated list of users. The list can consist of user names or user id numbers. Performance of the command can be measurably improved for systems with large numbers of jobs when a single user is specified.
 

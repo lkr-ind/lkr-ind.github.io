@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Submit a Job - DIaL3</title>
+  <title>Interactive Job - DIaL3</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Submit a Job";
-    var mkdocs_page_input_path = "Run_computation/submit_job.md";
+    var mkdocs_page_name = "Interactive Job";
+    var mkdocs_page_input_path = "Run_computation/interactive_job.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -83,7 +83,11 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Slurm_workload_manager/">SLURM Worload Manager</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Submit a Job</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Interactive Job</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#starting-an-interacitve-job">Starting an interacitve job</a>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../job_types/">Job types</a>
                     </li>
@@ -137,7 +141,7 @@
         
       
     
-    <li>Submit a Job</li>
+    <li>Interactive Job</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -149,7 +153,21 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="interactive-jobs">Interactive jobs</h1>
+<h2 id="starting-an-interacitve-job">Starting an interacitve job</h2>
+<p>You can run an interactive job like this:</p>
+<pre><code class="language-bash">$ srun  --account=YOUR_ACCOUNT_NAME --nodes=NUMBER_OF_NODES_REQUIRED --ntasks-per-node=NUMBER_TASKS_PER_NODE --time=HH:MM:SS --pty bash -i
+</code></pre>
+<p>An example of using the above command might look like the following on DIaL3:</p>
+<pre><code class="language-bash">$ srun --nodes=2 --ntasks-per-node=8 --time=01:00:00 --pty bash -i
+</code></pre>
+<p>Here we ask for a 8 cores on 2 nodes for one hour with the default amount of memory. The command prompt will appear as soon as the job starts.</p>
+<p>This is how it looks once the interactive job starts:</p>
+<pre><code>srun: job 12345 queued and waiting for resources
+srun: job 12345 has been allocated resources
+</code></pre>
+<p>Exit the bash shell to end the job. If you exceed the time or memory limits the job will also abort.</p>
+<p>Interactive jobs have the same policies as normal batch jobs and there are no extra restrictions. Please be advised that you might be sharing the node with other users depending on the amount of resources you have asked for.</p>
               
             </div>
           </div>
