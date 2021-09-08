@@ -71,6 +71,20 @@
                     <li class="toctree-l1"><a class="reference internal" href="../module_system/">Software Module System</a>
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Python</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#using-pip-to-install-a-package-in-your-home-directory">Using Pip to Install a package in your home directory</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#virtual-environment">Virtual environment</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conda-instructions">Conda instructions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#miniconda-installation">Miniconda installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#managing-conda-environments">Managing conda environments</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#using-conda-in-an-hpc-batch-job">Using conda in an HPC batch job</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Run a Computation</span></p>
@@ -149,7 +163,89 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="python">Python</h1>
+<p><a href="https://www.python.org/">Python</a> is a high level programming language. It is an interpreted language as compared to compile type languages like C, C++ or Fortran. It is also an Object Oriented Language which allows programmers to write clear and logical code for various types of projects. It is also one of the most widely use languages in the field of Data Science, Machine Learning and Artificial Intelligence.</p>
+<p>To use Python on DIaL3, you can use one of the available modules such as the following:</p>
+<pre><code class="language-bash">$ module load python3
+</code></pre>
+<p>To see the exact version of Python in your environment, use the following</p>
+<pre><code class="language-bash">$ python --version
+</code></pre>
+<p>It might happen that you need additional packages and libraries for Python that are not there on DIaL3. You can install them using any of the following methods:-</p>
+<ol>
+<li>Using Pip to Install a package in your home directory</li>
+<li>Using Virtual Environment</li>
+<li>Using Conda</li>
+</ol>
+<p>We describe each method in more detail below.</p>
+<h3 id="using-pip-to-install-a-package-in-your-home-directory">Using Pip to Install a package in your home directory</h3>
+<p>If you want to install a package in your home directory, you can use the following command</p>
+<pre><code class="language-bash">$ pip install --user package_name
+</code></pre>
+<p>where <code>--user</code> is responsible for installing the package in your home directory. Although this method is quite simple, it might lead to conflicts if you want to install multiple packages which might not be compatible with each other. The best way to handle such situation is to install separate compatible packages in their own environment. This can be done either using Virtual Environment or Using conda.</p>
+<h3 id="virtual-environment">Virtual environment</h3>
+<p>A python virtual environment installs a python environment (and a default set of libraries) into a directory you specify. This makes it simple to use pip to install your own modules.</p>
+<ul>
+<li>Load the python module</li>
+</ul>
+<pre><code class="language-bash">$ module load python3
+</code></pre>
+<ul>
+<li>Create the virtualenv - in this case we are creating a virtual environment in the "my_python" directory within the home directory.</li>
+</ul>
+<pre><code class="language-bash">$ virtualenv --system-site-packages --prompt=$USER-my_python my_python
+</code></pre>
+<ul>
+<li>Activate the virtual environment</li>
+</ul>
+<pre><code class="language-bash">$ source $HOME/my_python/bin/activate
+</code></pre>
+<p>On next login, you will only need to repeat the final step to load your environment and any libraries you have installed into it.</p>
+<p>To install libraries, you can simply run a standard pip command, for example, to install the gi module:</p>
+<pre><code class="language-bash">$ pip install gi
+</code></pre>
+<h3 id="conda-instructions">Conda instructions</h3>
+<p>If you need a version of Python, other than the ones that are pre-installed on our HPC system, then you can install it for your account, without admin privileges, with the help of Conda. Conda is an open-source package manager and environment management system, and it is probably the most popular package manager for Python and R. There are basically two ways to install Conda; either through Anaconda, which is a distribution of Python and R for scientific computing that includes many data-science packages, or through a stripped-down version called Miniconda, which includes only Conda, Python and a small number of required packages. Since the Anaconda installation is bloated and takes up a few GBs of disk space, and a typical user will only need a small fraction of the included packages, here we will describe the installation of the latter.</p>
+<h3 id="miniconda-installation">Miniconda installation</h3>
+<p>You first need to dowload the install script from <a href="https://docs.conda.io/en/latest/miniconda.html">this</a> webpage. Right-click and copy the link for the latest <strong>Linux 64bit</strong> Miniconda3 installer and then connect to DIaL3. Open a terminal and download the script with the <code>wget</code> command, e.g.</p>
+<pre><code class="language-bash">$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -P ~
+</code></pre>
+<p>which will download it at your home directory <code>~</code>. Now navigate to your home directory with <code>cd ~</code> and execute it with</p>
+<pre><code class="language-bash">$ bash Miniconda3-latest-Linux-x86_64.sh
+</code></pre>
+<p>Follow the instructions and press <code>Enter</code> to read the License Agreement, then <code>q</code> to go to the last page and finally type <code>yes</code> and press <code>Enter</code> if you accept the terms. You will then be asked for the directory where you want Miniconda to be installed. The default location is <code>~/miniconda3</code> and you will have to press <code>Enter</code> to confirm. The installer then prompts “<em>Do you wish the installer to initialize Miniconda3 by running conda init</em>“. Enter <code>yes</code>, then close and re-open the terminal for the changes to take effect. You will now see the word <code>(base)</code> just before your username, which means that the base environment is activated. You can now delete the downloaded shell script with <code>rm Miniconda3-latest-Linux-x86_64.sh</code>.</p>
+<p><strong>Important</strong>: Auto-activating the base environment may cause problems accessing HPC using NX (NoMachine). We recommend that you set the <code>auto_activate_base</code> parameter to false, by typing:</p>
+<pre><code class="language-bash">$ conda config --set auto_activate_base false
+</code></pre>
+<p>If you experience problems with NoMachine then follow the instructions <a href="https://uniofleicester.sharepoint.com/sites/Research-Computing/SitePages/hpc-faq.aspx">here</a>.</p>
+<h3 id="managing-conda-environments">Managing conda environments</h3>
+<p>To create a conda environment with a specific Python version type</p>
+<pre><code class="language-bash">$ conda create -n ENVNAME python=3.8
+</code></pre>
+<p>where <strong>ENVNAME</strong> is a name of your choice. This command will install the latest Python in the 3.8 branch. To verify that the environment was successfully installed type</p>
+<pre><code class="language-bash">$ conda env list
+</code></pre>
+<p>which lists all your environments. If you followed the guide till here, you should see two environments; the base and the one you created in the previous step. To activate it run</p>
+<pre><code class="language-bash">$ conda activate ENVNAME
+</code></pre>
+<p>To install a python package on that environment, e.g. <code>numpy</code> type:</p>
+<pre><code class="language-bash">$ conda install numpy
+</code></pre>
+<p>while the environment is activated, and if you want a specific version of that package you can use</p>
+<pre><code class="language-bash">$ conda install numpy=1.18.1
+</code></pre>
+<p>These commands with look for the package in the default channels. If you want to also specify a channel you can use the <code>-c</code> flag, e.g.</p>
+<pre><code class="language-bash">$ conda install -c conda-forge numpy
+</code></pre>
+<p>You can search for packages <a href="https://anaconda.org/">here</a>. If a package is unavailable through conda, but is available in the <a href="https://pypi.org/">Python Package Index</a> (Pypi) repository, then you can install it with the <code>pip</code> command (e.g. <code>pip install pycuda</code>). It is suggested that you install packages with <code>pip</code> only after you’ve installed all the packages that you can with <code>conda</code>.</p>
+<h3 id="using-conda-in-an-hpc-batch-job">Using conda in an HPC batch job</h3>
+<p>Now, if you want to use a conda environment in a non-interactive job, you have to activate it by adding the following code in your submit script, before executing your code (change the path to the location where you’ve installed miniconda):</p>
+<pre><code class="language-bash">$ source ~/miniconda3/bin/activate ENVNAME
+</code></pre>
+<p>Finally, to delete an environment first deactivate it with <code>conda deactivate</code> and then type:</p>
+<pre><code class="language-bash">$ conda remove -n ENVNAME --all
+</code></pre>
+<p>which will remove the environment and all installed packages.</p>
               
             </div>
           </div>
