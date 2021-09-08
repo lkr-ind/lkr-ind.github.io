@@ -88,6 +88,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../job_types/">Job types</a>
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Monitor jobs</a>
+    <ul class="current">
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Analyse code using Arm Forge</span></p>
@@ -149,7 +151,28 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="monitor-your-jobs">Monitor your jobs</h1>
+<p>To see which of your jobs are running or to see which ones are still in queue, you can use the <code>squeue</code> command as follows:</p>
+<pre><code class="language-bash">$ squeue -u $USER
+</code></pre>
+<p>You will see an output similar to the following</p>
+<pre><code>JOBID  PARTITION        NAME     USER         ST   TIME      NODES  NODELIST(REASON)
+123    parition_name    my_job   my_username  R    00:00:15  1 node dnode001
+</code></pre>
+<p>The various fields in the above output are explained below.</p>
+<ul>
+<li><strong>JOBID</strong>: Job ID assigned to your job the scheduler.</li>
+<li><strong>PARTITION</strong>: the partition you have chosen to run your job.</li>
+<li><strong>NAME</strong>: You job name.</li>
+<li><strong>USER</strong>: Your username.</li>
+<li><strong>ST</strong>: This indicates the status of the job. Some of the possible status values are: R= Running, PD = Pending and CG = Completing.</li>
+<li><strong>TIME</strong>: Time for which the job is running in HH:MM:SS.</li>
+<li><strong>NODES</strong>: The number of nodes you have asked for or the number of nodes that have been allocated (depending on the state of your job).</li>
+<li><strong>NODELIST (REASON</strong>): The nodes on which your job is running. If there is a problem with your job, it will also indicate a short message indicating the issue.</li>
+</ul>
+<p>To delete your job or to remove it from the queue, you can use the <code>scancel</code> command as shown below.</p>
+<pre><code class="language-bash">$ scancel job_id
+</code></pre>
               
             </div>
           </div>
