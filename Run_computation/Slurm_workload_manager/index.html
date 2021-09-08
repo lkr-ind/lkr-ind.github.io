@@ -99,7 +99,7 @@
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../submit_job/">Submit a Job</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../interactive_job/">Interactive Job</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../job_types/">Job types</a>
                     </li>
@@ -198,7 +198,10 @@ echo $SLURM_NTASKS
 echo $SLURM_NTASKS_PER_NODE
 echo $SLURM_JOB_NODELIST
 </code></pre>
-<p>On DiRAC 3 submitting the script we get:</p>
+<p>For submitting the above script to the job scheduler, use the following command.</p>
+<pre><code class="language-bash">$ sbatch your_job_script.sh
+</code></pre>
+<p>On DIaL3, the above script will lead to the following output:</p>
 <pre><code>6
 3
 dnode[001-002]
@@ -250,11 +253,11 @@ dnode005
 <blockquote>
 <p>Display information about jobs and job steps in all partitions. This causes information to be displayed about partitions that are configured as hidden, partitions that are unavailable to a user's group, and federated jobs that are in a "revoked" state.</p>
 </blockquote>
-<p><strong>-i <seconds>, --iterate=<seconds></strong></p>
+<p><strong>-i &lt; seconds &gt;, --iterate=&lt; seconds &gt;</strong></p>
 <blockquote>
 <p>Repeatedly gather and report the requested information at the interval specified (in seconds). By default, prints a time stamp with the header.</p>
 </blockquote>
-<p><strong>-u <user_list>, --user=<user_list></strong></p>
+<p><strong>-u &lt; user_list &gt;, --user=&lt; user_list &gt;</strong></p>
 <blockquote>
 <p>Request jobs or job steps from a comma separated list of users. The list can consist of user names or user id numbers. Performance of the command can be measurably improved for systems with large numbers of jobs when a single user is specified.</p>
 </blockquote>
@@ -307,7 +310,7 @@ dnode005
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../submit_job/" class="btn btn-neutral float-right" title="Submit a Job">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../interactive_job/" class="btn btn-neutral float-right" title="Interactive Job">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../batch_system/" class="btn btn-neutral" title="Batch System"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -339,7 +342,7 @@ dnode005
       <span><a href="../batch_system/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../submit_job/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../interactive_job/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
