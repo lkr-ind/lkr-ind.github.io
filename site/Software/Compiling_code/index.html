@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Software Module System - DIaL3</title>
+  <title>Compiling code - DIaL3</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Software Module System";
-    var mkdocs_page_input_path = "Software/module_system.md";
+    var mkdocs_page_name = "Compiling code";
+    var mkdocs_page_input_path = "Software/Compiling_code.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -68,25 +68,23 @@
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../software_installed/">Software Installed on DIaL3</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Software Module System</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../module_system/">Software Module System</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Compiling code</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#which-all-modules-are-available">Which all modules are available?</a>
+    <li class="toctree-l2"><a class="reference internal" href="#compiler-names-for-various-languages">Compiler names for various languages</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#which-modules-are-currently-loaded">Which modules are currently loaded?</a>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-load-a-particular-compiler">How to load a particular Compiler?</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#how-to-load-a-module">How to load a module?</a>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-compile-your-serial-code">How to compile your Serial code?</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#how-to-unload-a-module">How to unload a module?</a>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-compile-your-openmp-code">How to compile your OpenMP code?</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#how-to-see-which-all-environment-variables-are-modified-by-loading-a-module">How to see which all environment variables are modified by loading a module?</a>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-compile-your-mpi-code">How to compile your MPI code?</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#how-to-switch-to-a-different-version-of-a-module">How to switch to a different version of a module?</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#how-to-unload-all-modules">How to unload all modules?</a>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-compile-code-with-debug-or-optimisation-flags">How to compile code with Debug or Optimisation flags?</a>
     </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Compiling_code/">Compiling code</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Python/">Python</a>
                     </li>
@@ -155,7 +153,7 @@
         
       
     
-    <li>Software Module System</li>
+    <li>Compiling code</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -167,58 +165,137 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="software-module-system">Software Module System</h1>
-<p>Since DIaL3 is a shared resource used by many researchers, students and academicians, the Research Computing Services (RCS) team provides some centrally installed software for all users. This allows two major advantages:-</p>
-<ol>
-<li>It allows for easier support and maintenance of the software as the user cannot change the default settings in a centrally installed software.</li>
-<li>A user is relieved of installing a software by himself as many of the most widely used software have already been installed for them and are ready to be used.</li>
-</ol>
-<p>The main command for using this system is called the <code>module</code> command. To get a list of all options available with this command, you can type:</p>
-<pre><code class="language-bash">$ module --help
+                <h1 id="compiling-code-on-dial3">Compiling Code On DIaL3</h1>
+<p>If you want to compile your code on DIaL3, there are two compilers available for C, C++ and Fortran: the Intel compilers and the GNU Compiler Collection (GCC).</p>
+<p>Below we give a list of compilers for various languages:</p>
+<h4 id="compiler-names-for-various-languages">Compiler names for various languages</h4>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>GCC</th>
+<th>Intel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C</td>
+<td><code>gcc</code></td>
+<td><code>icc</code></td>
+</tr>
+<tr>
+<td>C++</td>
+<td><code>g++</code></td>
+<td><code>icpc</code></td>
+</tr>
+<tr>
+<td>F77, F90, F95</td>
+<td><code>gfortran</code></td>
+<td><code>ifort</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-to-load-a-particular-compiler">How to load a particular Compiler?</h3>
+<p>You can either load the GCC or Intel compilers by using the <code>module load</code> command. For GCC compilers, you can use something like:</p>
+<pre><code class="language-bash">$ module load  gcc/9.3.0
 </code></pre>
-<h2 id="which-all-modules-are-available">Which all modules are available?</h2>
-<p>To see a list of all modules installed on DIaL3, use the command:</p>
-<pre><code class="language-bash">$ module avail
+<p>and for Intel compilers, you can use:</p>
+<pre><code class="language-bash">$ module load intel-parallel-studio/cluster.2019.5
 </code></pre>
-<p>For more details, please see <a href="../software_installed/">List of all modules</a></p>
-<h2 id="which-modules-are-currently-loaded">Which modules are currently loaded?</h2>
-<p>To see the list of module currently loaded in your environment, please use the command:</p>
-<pre><code class="language-bash">$ module list
-</code></pre>
-<h2 id="how-to-load-a-module">How to load a module?</h2>
-<p>To load a module, type the following in you terminal:</p>
-<pre><code class="language-bash">$ module load gcc
-</code></pre>
-<p>This will load the default <code>gcc</code> version (<em>gcc/10.2.0 in this case</em>) in your environment. To load a particular version, please use:</p>
-<pre><code class="language-bash">$ module load gcc/11.1.0/xu5zmz
-</code></pre>
-<h2 id="how-to-unload-a-module">How to unload a module?</h2>
-<p>To unload a module, please use the following:</p>
-<pre><code class="language-bash">$ module unload gcc/11.1.0/xu5zmz
-</code></pre>
-<h2 id="how-to-see-which-all-environment-variables-are-modified-by-loading-a-module">How to see which all environment variables are modified by loading a module?</h2>
-<p>To get more details about all the environmental variables that are added or modified by loading a module, please use the either of the two commands <code>module display gcc</code> or <code>module show gcc</code>. For example, if you type the following in your terminal,</p>
-<pre><code class="language-bash">$ module display gcc
-</code></pre>
-<p>You will get an output similar to the following:</p>
-<pre><code class="language-bash">----------------------------------------------------------------------------
-   /cm/local/modulefiles/gcc/10.2.0:
-----------------------------------------------------------------------------
-whatis(&quot;adds GNU Cross Compilers to your environment variables &quot;)
-prepend_path(&quot;PATH&quot;,&quot;/cm/local/apps/gcc/10.2.0/bin&quot;)
-prepend_path(&quot;LD_LIBRARY_PATH&quot;,&quot;/cm/local/apps/gcc/10.2.0/lib:/cm/local/apps/gcc/10.2.0/lib64:/cm/local/apps/gcc/10.2.0/lib32&quot;)
-help([[ Adds GNU Cross Compilers to your environment variables,
-]])
+<p>The Intel Parallel Studio Cluster module gives you many things in addition to the default <code>icc</code>, <code>icpc</code>  and <code>ifort</code> compilers. It also provides you with tools such as Vtune (Debugger), ITAC (Intel Trace Analyser and Collector) etc.</p>
+<h3 id="how-to-compile-your-serial-code">How to compile your Serial code?</h3>
+<p>Once you have loaded a suitable compiler, you can compile your serial code using one of the following commands.</p>
+<p>a. For C Code</p>
+<pre><code class="language-bash"># If you are using GCC compiler
+$ gcc my_serial_code.c -o my_binary_file_name.o
 
+# If you are using Intel compiler
+$ icc my_serial_code.c -o my_binary_file_name.o
 </code></pre>
-<p>From above output, it can be clearly seen that the <code>gcc</code> module adds values to the <code>PATH</code> and <code>LD_LIBRARY_PATH</code> variables.</p>
-<h2 id="how-to-switch-to-a-different-version-of-a-module">How to switch to a different version of a module?</h2>
-<p>To switch to a different version of a module, you can use the <code>module switch older_version new_version</code> command as shown below.</p>
-<pre><code class="language-bash">$ module switch gcc gcc/11.1.0 
+<p>b. For C++ Code</p>
+<pre><code class="language-bash"># If you are using GCC compiler
+$ g++ my_serial_code.cpp -o my_binary_file_name.o
+
+# If you are using Intel compiler
+$ icpc my_serial_code.cpp -o my_binary_file_name.o
 </code></pre>
-<h2 id="how-to-unload-all-modules">How to unload all modules?</h2>
-<p>To remove all modules from your environment, please use the following command.</p>
-<pre><code class="language-bash">$ module purge
+<p>c. For Fortran Code</p>
+<pre><code class="language-bash"># If you are using GCC compiler
+$ gfortran my_serial_code.f90 -o my_binary_file_name.o
+
+# If you are using Intel compiler
+$ ifort my_serial_code.f90 -o my_binary_file_name.o
+</code></pre>
+<h3 id="how-to-compile-your-openmp-code">How to compile your OpenMP code?</h3>
+<p>Many scientific codes use more than one cores available on one single node of a HPC system in order to reduce the computational time. In most cases, OpenMP is the default choice for thread based parallelism or shared memory programming. In order to compile your OpenMP code, all you need to add is additional flag during the compilation stage which is <code>-fopenmp</code> for GCC compilers and <code>-qopenmp</code> for Intel compilers. </p>
+<p>After loading your compiler, you can compile your OpenMP code using one of the following commands.</p>
+<p>a. For C Code</p>
+<pre><code class="language-bash"># If you are using GCC compiler
+$ gcc -fopenmp my_openmp_code.c -o my_binary_file_name.o
+
+# If you are using Intel compiler
+$ icc -qopenmp my_openmp_code.c -o my_binary_file_name.o
+</code></pre>
+<p>b. For C++ Code</p>
+<pre><code class="language-bash"># If you are using GCC compiler
+$ g++ -fopenmp my_openmp_code.cpp -o my_binary_file_name.o
+
+# If you are using Intel compiler
+$ icpc -qopenmp my_openmp_code.cpp -o my_binary_file_name.o
+</code></pre>
+<p>c. For Fortran Code</p>
+<pre><code class="language-bash"># If you are using GCC compiler
+$ gfortran -fopenmp my_openmp_code.f90 -o my_binary_file_name.o
+
+# If you are using Intel compiler
+$ ifort -qopenmp my_openmp_code.f90 -o my_binary_file_name.o
+</code></pre>
+<h3 id="how-to-compile-your-mpi-code">How to compile your MPI code?</h3>
+<p>Message Passing Interface or MPI is the default application programming interface (API) used in the HPC software development for using more than one node on the system. It allows you to communicate between tasks by sharing messages between them.</p>
+<p>To compile your MPI code, first load a compiler of your choice and then use one of the following commands.</p>
+<p>a. For C Code</p>
+<pre><code class="language-bash"># If you are using GCC compiler
+$ mpicc my_mpi_code.c -o my_binary_file_name.o
+
+# If you are using Intel compiler
+$ mpiicc my_mpi_code.c -o my_binary_file_name.o
+</code></pre>
+<p>b. For C++ Code</p>
+<pre><code class="language-bash"># If you are using GCC compiler
+$ mpicxx my_mpi_code.cpp -o my_binary_file_name.o
+
+# If you are using Intel compiler
+$ mpiicpc my_mpi_code.cpp -o my_binary_file_name.o
+</code></pre>
+<p>c. For Fortran Code</p>
+<pre><code class="language-bash"># If you are using GCC compiler
+$ mpif90 my_mpi_code.f90 -o my_binary_file_name.o
+
+# If you are using Intel compiler
+$ mpiifort my_mpi_code.f90 -o my_binary_file_name.o
+</code></pre>
+<h3 id="how-to-compile-code-with-debug-or-optimisation-flags">How to compile code with Debug or Optimisation flags?</h3>
+<p>All the command that are given above can also be used by using additional flags either for debugging purpose or for Optimisation. The following table lists some basic options:</p>
+<table>
+<thead>
+<tr>
+<th>Options</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-g</td>
+<td>Enables debugging information.</td>
+</tr>
+<tr>
+<td>-Ox</td>
+<td>Enables compiler optimization, where <code>X</code> represents the optimization level and is one of 0, 1, 2, 3.</td>
+</tr>
+</tbody>
+</table>
+<p>An example usage of an optimisation flag is given below:</p>
+<pre><code class="language-bash">$ icc -O3 my_code.c -o my_binary_file.o 
 </code></pre>
               
             </div>
@@ -227,10 +304,10 @@ help([[ Adds GNU Cross Compilers to your environment variables,
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Compiling_code/" class="btn btn-neutral float-right" title="Compiling code">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Python/" class="btn btn-neutral float-right" title="Python">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../software_installed/" class="btn btn-neutral" title="Software Installed on DIaL3"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../module_system/" class="btn btn-neutral" title="Software Module System"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -256,10 +333,10 @@ help([[ Adds GNU Cross Compilers to your environment variables,
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../software_installed/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../module_system/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../Compiling_code/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../Python/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

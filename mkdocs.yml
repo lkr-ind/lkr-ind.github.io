@@ -33,9 +33,9 @@ nav:
     Profile your Code: './Analyse_code/Profile_code.md'
     Debug your Code: './Analyse_code/Debug_code.md'
     
-- Getting Help:
-    Contact : './Support/Contact.md' 
+- Getting Help: 
     Frequently asked questions: './Support/FAQ.md'
+    Contact : './Support/Contact.md'
     Support Staff: './Support/Support_staff.md'
 
 
