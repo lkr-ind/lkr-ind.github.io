@@ -14,6 +14,7 @@ nav:
 - Software:
     Software Installed on DIaL3: './Software/software_installed.md'
     Software Module System: './Software/module_system.md'
+    Compiling code: './Software/Compiling_code.md' 
     Python: './Software/Python.md'
      
 - Run a Computation:
