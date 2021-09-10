@@ -45,8 +45,8 @@ Use "module keyword key1 key2 ..." to search for all possible modules matching a
 
 There are two ways by which you can search for a particular module of your interest.
 
-1. Using `module avail` directly
-2. Using `spider` command
+1. Using `module avail <application>` directly
+2. Using `module spider <application>` command
 
 ### Using module avail to search a module
 
@@ -79,7 +79,7 @@ Use "module keyword key1 key2 ..." to search for all possible modules matching
 any of the "keys".
 ```
 
-As you can see in the output, you got all modules with the name `intel` in them but it also produced some extra lines at the end. In order to further refine the output, you can use `grep` command in conjunction with `module avail` as shown below.
+In order to further refine the output, you can use `grep` command in conjunction with `module avail` as shown below.
 
 ```bash
 $ module avail 2>&1 | grep -i intel
@@ -96,7 +96,6 @@ The above command will produce the output as shown below.
    intel-oneapi-compilers/2021.2.0/3q6eev
    intel-parallel-studio/cluster.2019.5/aveeft
 ```
-
 
 
 ### Using spider to search a module 

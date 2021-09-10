@@ -4,7 +4,6 @@ There are a number of file systems on DIaL3 that should be used in different way
 
 - [/home](#home)
 - [/scratch](#scratch)
-- [/data](#data)
 - [/tmp](#tmp)
 
 ### /home
@@ -30,12 +29,6 @@ The directory `/scratch/project/shared` has special permissions to ensure that a
 The scratch directory used should be the main location for job files, and generally should be used as the working directory for jobs. The  scratch space has quotas applied which are in line with those requested  for “work” in DiRAC time applications. These are not allocations, only  quotas, so can add up to more than the available storage.
 
 <span style="color:red">**Warning:**</span> Files within `/scratch` are **not backed up**. Furthermore, there is an automated process which deletes any files that haven't been accessed in more than **60 days**. There will be no prior warning that files will be deleted, it is up to  users to ensure that important data is not kept in /scratch for long  term storage.
-
-
-
-### /data
-
-This file system is provided for medium term storage of results prior to publication and transfer of data to the users own institution. The  structure of the filesystem is similar to `/scratch`. It is also not  backed up and will be swept of old data. The data sweeping will be based on modification times being more than 9 months.
 
 
 

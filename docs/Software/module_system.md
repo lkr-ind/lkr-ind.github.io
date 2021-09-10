@@ -1,9 +1,6 @@
 # Software Module System
 
-Since DIaL3 is a shared resource used by many researchers, students and academicians, the Research Computing Services (RCS) team provides some centrally installed software for all users. This allows two major advantages:-
-
-1. It allows for easier support and maintenance of the software as the user cannot change the default settings in a centrally installed software.
-2. A user is relieved of installing a software by himself as many of the most widely used software have already been installed for them and are ready to be used.
+Like most HPC sites, We use modulefiles to manage software on DIaL3.  However, we are also heirerachical 
 
 The main command for using this system is called the `module` command. To get a list of all options available with this command, you can type:
 
