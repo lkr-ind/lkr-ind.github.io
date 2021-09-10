@@ -1,6 +1,6 @@
 # Interactive jobs
 
-## Starting an interacitve job
+## Starting an interactive job
 
 You can run an interactive job like this:
 

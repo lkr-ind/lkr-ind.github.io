@@ -8,7 +8,7 @@ nav:
     Architecture: './About_dial3/architecture.md'
     Filesystem: './About_dial3/filesystem.md'
     
-- Getting Statrted:
+- Getting Started:
     Create Account: './Getting_started/create_account.md'
     Connecting: './Getting_started/connecting_dial3.md'
     
@@ -18,9 +18,9 @@ nav:
     Compiling code: './Software/Compiling_code.md' 
     Python: './Software/Python.md'
      
-- Run a Computation:
+- Running Jobs:
     Dos and Don'ts: './Run_computation/dos_and_donts.md'
-    Intercative or batch: './Run_computation/interactive_or_batch.md'
+    Interactive or batch: './Run_computation/interactive_or_batch.md'
     Batch System: './Run_computation/batch_system.md'
     SLURM Worload Manager: './Run_computation/Slurm_workload_manager.md'
     Interactive Job: './Run_computation/interactive_job.md'
