@@ -200,8 +200,8 @@ Use &quot;module keyword key1 key2 ...&quot; to search for all possible modules 
 <h2 id="search-for-a-module">Search for a module</h2>
 <p>There are two ways by which you can search for a particular module of your interest.</p>
 <ol>
-<li>Using <code>module avail</code> directly</li>
-<li>Using <code>spider</code> command</li>
+<li>Using <code>module avail &lt;application&gt;</code> directly</li>
+<li>Using <code>module spider &lt;application&gt;</code> command</li>
 </ol>
 <h3 id="using-module-avail-to-search-a-module">Using module avail to search a module</h3>
 <p>Let us say that you want to search for all modules having <code>intel</code> word in their name. You can use the following command in your terminal.</p>
@@ -227,7 +227,7 @@ Use &quot;module spider&quot; to find all possible modules and extensions.
 Use &quot;module keyword key1 key2 ...&quot; to search for all possible modules matching
 any of the &quot;keys&quot;.
 </code></pre>
-<p>As you can see in the output, you got all modules with the name <code>intel</code> in them but it also produced some extra lines at the end. In order to further refine the output, you can use <code>grep</code> command in conjunction with <code>module avail</code> as shown below.</p>
+<p>In order to further refine the output, you can use <code>grep</code> command in conjunction with <code>module avail</code> as shown below.</p>
 <pre><code class="language-bash">$ module avail 2&gt;&amp;1 | grep -i intel
 </code></pre>
 <p>The above command will produce the output as shown below.</p>
