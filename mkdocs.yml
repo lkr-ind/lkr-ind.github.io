@@ -1,4 +1,5 @@
-site_name: DIaL3
+site_name: DIaL3  <img src='/img/WhiteBlockUoLlogo.png' class="logo" alt="UoL Logo"/>
+site_url: https://www630.lamp.le.ac.uk/
 
 nav:
 - Home: 'index.md'
@@ -41,4 +42,7 @@ nav:
 
 theme: 
   name: readthedocs
-      
+  custom_dir: custom_theme/
+  extra_templates: 
+    - index.html
+    - base.html
