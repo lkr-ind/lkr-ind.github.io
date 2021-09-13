@@ -30,11 +30,9 @@ This is probably because you haven't loaded the module which sets up your enviro
 
 ### My process was killed.
 
-The login nodes on DiaL3 have a hard limit of --- hours of *CPU time* per process. If this is exceeded, the process will be killed. 
+The login nodes on **DIaL3 **should not be used for production runs or heavy processing. If the system administrators find the misuse of login nodes for compute intensive tasks, they might decide to kill those jobs without warning. 
 
-This limit applies to *CPU time* not *runtime:* an idle process may run for many hours without consuming much *CPU time.* Similarly a multicore process may consume two hours of *CPU time* very quickly.
-
-Long running processes should not be launched directly on the login nodes.  Instead they should be submit to the queue using the job scheduler. For  further information see the page about [Interactive vs Batch jobs](../Run_computation/interactive_or_batch.md) and [Job types](../Run_computation/job_types.md).
+Please be advised that long running processes should not be launched directly on the login nodes.  Instead they should be submitted to the queue using the job scheduler. For  further information see the page about [Interactive vs Batch jobs](../Run_computation/interactive_or_batch.md) and [Job types](../Run_computation/job_types.md).
 
 ### My job was killed but there is no output and no errors were reported.
 
