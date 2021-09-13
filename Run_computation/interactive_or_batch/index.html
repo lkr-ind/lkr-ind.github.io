@@ -19,7 +19,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Intercative or batch";
+    var mkdocs_page_name = "Interactive or batch";
     var mkdocs_page_input_path = "Run_computation/interactive_or_batch.md";
     var mkdocs_page_url = "/Run_computation/interactive_or_batch/";
   </script>
@@ -58,7 +58,7 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../About_dial3/filesystem/">Filesystem</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Getting Statrted</span></p>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/create_account/">Create Account</a>
                     </li>
@@ -76,11 +76,11 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../Software/Python/">Python</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Run a Computation</span></p>
+                <p class="caption"><span class="caption-text">Running Jobs</span></p>
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../dos_and_donts/">Dos and Don'ts</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Intercative or batch</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Interactive or batch</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#interactive-processing">Interactive processing</a>
         <ul>
@@ -154,11 +154,11 @@
     
       
         
-          <li>Run a Computation &raquo;</li>
+          <li>Running Jobs &raquo;</li>
         
       
     
-    <li>Intercative or batch</li>
+    <li>Interactive or batch</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -181,13 +181,13 @@
 <li>Tasks that require frequent user interaction</li>
 <li>Graphically intensive tasks</li>
 </ul>
-<p>The design of <strong>DIaL3</strong> is strongly biased towards batch jobs. It has 200  compute nodes and only two login nodes. Therefore interactive processes  on ALICE shouldn't take more than a few minutes of CPU time.</p>
-<p>There are hard limits applied which means  that a process will be killed if it uses more than a few -----  hours of CPU time on the login nodes. Furthermore, should the  administrators be alerted to heavy processing on the login nodes,  those processes are likely to be killed with no warning in order to  ensure the login nodes remain responsive for everyone.</p>
+<p>The design of <strong>DIaL3</strong> is strongly biased towards batch jobs. It has 200  compute nodes and only two login nodes. Therefore interactive processes  on <strong>DIaL3</strong> shouldn't take more than a few minutes of CPU time.</p>
+<p>Although there are no hard limits (in terms of usage time) applied on the login nodes, you should never use it for heavy processing. Furthermore, should the  administrators be alerted to heavy processing on the login nodes,  those processes are likely to be killed with no warning in order to  ensure the login nodes remain responsive for everyone.</p>
 <h3 id="what-if-you-need-to-run-longer-processes-interactively">What if you need to run longer processes interactively?</h3>
-<p>You can submit jobs to the scheduler for interactive running. These jobs  provide a login to one of the compute nodes with the requested resources dedicated to you. These jobs support X-forwarding so graphical  applications will work as normal. For more information, see <a href="https://uniofleicester.sharepoint.com/sites/Research-Computing/SitePages/job-types-hpc.aspx#interactive-jobs">Interactive jobs</a>.</p>
+<p>You can submit jobs to the scheduler for interactive running. These jobs  provide a login to one of the compute nodes with the requested resources dedicated to you. These jobs support X-forwarding so graphical  applications will work as normal. For more information, see <a href="../interactive_job/">Interactive jobs</a>.</p>
 <h2 id="batch-processing">Batch processing</h2>
 <h3 id="what-is-batch-processing">What is batch processing?</h3>
-<p>Batch processing is more complex because work has to carefully planned and  able to run without user interaction. Batch jobs are submitted to a <a href="https://uniofleicester.sharepoint.com/sites/Research-Computing/SitePages/scheduler-hpc.aspx">job scheduler</a> and run on the first available compute node(s). Once submitted, you can log off and wait for the jobs to complete, with the option to be sent an  email when this has happened. Although batch jobs may have to wait in a  queue before running, they are then given a dedicated set of resources  to ensure that they complete as quickly as possible.</p>
+<p>Batch processing is more complex because work has to carefully planned and  able to run without user interaction. Batch jobs are submitted to a <a href="../Slurm_workload_manager/">job scheduler</a> and run on the first available compute node(s). Once submitted, you can log off and wait for the jobs to complete, with the option to be sent an  email when this has happened. Although batch jobs may have to wait in a  queue before running, they are then given a dedicated set of resources  to ensure that they complete as quickly as possible.</p>
 <h3 id="when-should-you-use-batch-processing">When should you use batch processing?</h3>
 <ul>
 <li>Longer running processes</li>

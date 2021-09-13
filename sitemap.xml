@@ -2,127 +2,127 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://www630.lamp.le.ac.uk/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/About_dial3/architecture/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/About_dial3/filesystem/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Analyse_code/Debug_code/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Analyse_code/Install_arm_forge/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Analyse_code/Perf_report/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Analyse_code/Profile_code/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Analyse_code/about_arm_forge/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Getting_started/connecting_dial3/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Getting_started/create_account/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Run_computation/Slurm_workload_manager/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Run_computation/batch_system/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Run_computation/dos_and_donts/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Run_computation/interactive_job/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Run_computation/interactive_or_batch/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Run_computation/job_types/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Run_computation/monitor_jobs/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Software/Compiling_code/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Software/Python/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Software/hierarchical/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Software/module_system/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Software/software_installed/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Support/Contact/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Support/FAQ/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www630.lamp.le.ac.uk/Support/Support_staff/</loc>
-         <lastmod>2021-09-10</lastmod>
+         <lastmod>2021-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

@@ -58,7 +58,7 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../About_dial3/filesystem/">Filesystem</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Getting Statrted</span></p>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/create_account/">Create Account</a>
                     </li>
@@ -76,11 +76,11 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../Software/Python/">Python</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Run a Computation</span></p>
+                <p class="caption"><span class="caption-text">Running Jobs</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../Run_computation/dos_and_donts/">Dos and Don'ts</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Run_computation/interactive_or_batch/">Intercative or batch</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Run_computation/interactive_or_batch/">Interactive or batch</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../Run_computation/batch_system/">Batch System</a>
                     </li>
@@ -192,9 +192,8 @@ module load gcc/9.3.0
 <p>This is probably because you haven't loaded the module which sets up your environment correctly for this software. See the <a href="../../Software/module_system/">Modules</a> page for more information.</p>
 <h2 id="job-submission-issues">Job submission issues</h2>
 <h3 id="my-process-was-killed">My process was killed.</h3>
-<p>The login nodes on DiaL3 have a hard limit of --- hours of <em>CPU time</em> per process. If this is exceeded, the process will be killed. </p>
-<p>This limit applies to <em>CPU time</em> not <em>runtime:</em> an idle process may run for many hours without consuming much <em>CPU time.</em> Similarly a multicore process may consume two hours of <em>CPU time</em> very quickly.</p>
-<p>Long running processes should not be launched directly on the login nodes.  Instead they should be submit to the queue using the job scheduler. For  further information see the page about <a href="../../Run_computation/interactive_or_batch/">Interactive vs Batch jobs</a> and <a href="../../Run_computation/job_types/">Job types</a>.</p>
+<p>The login nodes on <strong>DIaL3 </strong>should not be used for production runs or heavy processing. If the system administrators find the misuse of login nodes for compute intensive tasks, they might decide to kill those jobs without warning. </p>
+<p>Please be advised that long running processes should not be launched directly on the login nodes.  Instead they should be submitted to the queue using the job scheduler. For  further information see the page about <a href="../../Run_computation/interactive_or_batch/">Interactive vs Batch jobs</a> and <a href="../../Run_computation/job_types/">Job types</a>.</p>
 <h3 id="my-job-was-killed-but-there-is-no-output-and-no-errors-were-reported">My job was killed but there is no output and no errors were reported.</h3>
 <p>Almost certainly this is because you have not specified a value for <strong>vmem</strong>, or have a value which is too low. Increase the value requested and resubmit your job.</p>
 <h3 id="my-job-started-but-only-ran-for-a-minute">My job started but only ran for a minute.</h3>
