@@ -34,10 +34,12 @@ nav:
     Profile your Code: './Analyse_code/Profile_code.md'
     Debug your Code: './Analyse_code/Debug_code.md'
     
-- Getting Help: 
+- Getting Help:
+    Tips and Tricks : './Support/Tips_and_Tricks.md' 
     Frequently asked questions: './Support/FAQ.md'
     Contact : './Support/Contact.md'
     Support Staff: './Support/Support_staff.md'
+    
 
 
 theme: 
