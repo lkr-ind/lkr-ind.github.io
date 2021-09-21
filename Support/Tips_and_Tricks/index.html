@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://www630.lamp.le.ac.uk/Support/Tips_and_Tricks/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+<title>DIRAC - DIaL3 User Guide</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Tips and Tricks";
+    var mkdocs_page_input_path = "Support/Tips_and_Tricks.md";
+    var mkdocs_page_url = "/Support/Tips_and_Tricks/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> DIaL3  <img src='/img/WhiteBlockUoLlogo.png' class="logo" alt="UoL Logo"/></a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../About_dial3/architecture/">Architecture</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../About_dial3/filesystem/">Filesystem</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/create_account/">Create Account</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/connecting_dial3/">Connecting</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Software</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Software/software_installed/">Software Installed on DIaL3</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Software/module_system/">Software Module System</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Software/Compiling_code/">Compiling code</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Software/Python/">Python</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Running Jobs</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Run_computation/dos_and_donts/">Dos and Don'ts</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Run_computation/interactive_or_batch/">Interactive or batch</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Run_computation/batch_system/">Batch System</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Run_computation/Slurm_workload_manager/">SLURM Worload Manager</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Run_computation/interactive_job/">Interactive Job</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Run_computation/job_types/">Job types</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Run_computation/monitor_jobs/">Monitor jobs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Analyse code using Arm Forge</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Analyse_code/about_arm_forge/">What is Arm Forge</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Analyse_code/Install_arm_forge/">Install Arm Forge</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Analyse_code/Perf_report/">Performance Report</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Analyse_code/Profile_code/">Profile your Code</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Analyse_code/Debug_code/">Debug your Code</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Getting Help</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Tips and Tricks</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-changes-in-the-job-scheduler">1. Changes in the Job Scheduler</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-changes-in-the-job-submission-script">2. Changes in the Job Submission Script</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#2-1-pbs-script-for-a-hybrid-job">2. 1. PBS Script for a hybrid job</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#22-slurm-script-for-a-hybrid-job">2.2. SLURM script for a hybrid job</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-loading-of-modules">3. Loading of modules</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-some-common-and-useful-module-combinations">4. Some common and useful module combinations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#4-1-intel-compiler-intel-mpi">4. 1. Intel Compiler + Intel MPI</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#42-intel-one-api-compiler-and-intel-one-api-mpi">4.2. Intel One API compiler and Intel One API MPI</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#43-amd-aocc-compiler-and-openmpi">4.3. AMD AOCC compiler and OpenMPI</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#44-intel-compilers-2021-and-openmpi">4.4. Intel Compilers 2021 and OpenMPI</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-suggested-compiler-flags">5. Suggested Compiler Flags</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#5-1-intel">5. 1. Intel</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#52-gnu">5.2. GNU</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#53-aocc">5.3. AOCC</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-flags-and-modules-tested-during-technical-commissioning">6. Flags and modules tested during Technical Commissioning</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#61-application-1">6.1. Application 1</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#modules-used">Modules used</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#flags-used">Flags used</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#62-application-2">6.2. Application 2</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#modules-used_1">Modules used</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#flags-used_1">Flags used</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#63-application-3">6.3. Application 3</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#modules-used_2">Modules used</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#flags-used_2">Flags used</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../FAQ/">Frequently asked questions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Contact/">Contact</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Support_staff/">Support Staff</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">DIaL3  <img src='/img/WhiteBlockUoLlogo.png' class="logo" alt="UoL Logo"/></a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Getting Help &raquo;</li>
+        
+      
+    
+    <li>Tips and Tricks</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="tips-and-tricks-for-dial3">Tips and Tricks for DIaL3</h1>
+<p>In this section, we describe some of the our experiences that we gained during the technical commissioning of <strong>DIaL3</strong>. These might be useful for the users who are habitual of using either the <strong>DIaL2.5</strong> system or Alice supercomputing facility at UoL. </p>
+<h2 id="1-changes-in-the-job-scheduler">1. Changes in the Job Scheduler</h2>
+<p>The scheduler on both the <strong>Alice</strong> and <strong>DIal2.5</strong> is <a href="https://www.altair.com/pbs-works-documentation/">PBS</a> while on the new DIaL3 system, it is <a href="https://slurm.schedmd.com/documentation.html">SLURM</a>. Thus you will have to change your job submission scripts accordingly. Please see the following section for an example.</p>
+<h2 id="2-changes-in-the-job-submission-script">2. Changes in the Job Submission Script</h2>
+<p>As we have described above, the new <strong>DIaL3</strong> system uses the  <strong>SLURM</strong> workload manager for submitting jobs to the compute nodes. Suppose that you were running a hybrid job <code>MPI+OpenMP</code> on the old system and you want to submit a hybrid job to the new system, you will have to change your script as described below.</p>
+<h4 id="2-1-pbs-script-for-a-hybrid-job">2. 1. PBS Script for a hybrid job</h4>
+<pre><code class="language-bash">#/bin/bash
+
+#PBS -o stdout_filename.out
+#PBS -e stderr_filename.error
+#PBS -N your_job_name
+#PBS -l nodes=2:ppn=36
+#PBS -l walltime=01:00:00
+#PBS -m bea
+#PBS -A account_name
+
+# Load requires modules
+module purge
+module load intel/compilers/20.1
+module load intel/mpi/20.1
+
+#Change to current directory.
+cd $PBS_O_WORKDIR
+
+YOUR_EXECUTABLE_DIR=/home/your_executable_dir
+MY_CURRENT_HOME=.
+INPUT_FILENAME=setup.txt
+
+# This is an input to the run command. You might not need this.
+Stage1_run=initial
+
+# An input file for the run. You might not need this.
+Bin_file_name=ifile
+
+Number_omp_threads_per_mpi_process=4
+Number_mpi_process_per_node=9
+
+#Total number of mpi process = number of nodes * number of mpi processes per node
+Total_number_mpi_process=18
+
+Ouput_file_name=log_file.out 
+
+export OMP_NUM_THREADS=$Number_omp_threads_per_mpi_process
+
+mpirun -perhost $Number_mpi_process_per_node -n $Total_number_mpi_process $YOUR_EXECUTABLE_DIR/YOUR_EXECUTABLE $Stage1_run $Bin_file_name &lt; $INPUT_FILENAME &amp;&gt; $Ouput_file_name
+</code></pre>
+<h4 id="22-slurm-script-for-a-hybrid-job">2.2. SLURM script for a hybrid job</h4>
+<pre><code class="language-bash">#!/bin/bash --login
+
+#SBATCH -J Your_Job_Name
+#SBATCH -o Your_stdout_filename.o%j
+#SBATCH -e Your_stderr_filename.e%j
+##SBATCH -p Partition_name
+##SBATCH -A Account_name
+#SBATCH --nodes=2
+#SBATCH --ntasks=16
+#SBATCH --ntasks-per-node=8
+#SBATCH --exclusive
+#SBATCH -t 00:30:00
+
+
+export nodecnt=$SLURM_JOB_NUM_NODES
+export corecnt=`expr ${SLURM_CPUS_ON_NODE} \* ${nodecnt}`
+export mpicnt=$SLURM_NTASKS
+export threadspermpi=`expr ${SLURM_CPUS_ON_NODE} \/ ${SLURM_NTASKS_PER_NODE}`
+export threadcnt=`expr ${mpicnt} \* ${threadspermpi}`
+export OMP_NUM_THREADS=$threadspermpi
+#export I_MPI_PIN_DOMAIN=omp
+export OMP_PLACES=cores
+
+
+if [ $threadcnt -ne $corecnt ]
+then
+  echo &quot;Error, mismatch between requested and available hardware!&quot;
+  exit -1
+fi
+
+#Dial3 modules. Please modify accordingly.
+module purge
+module load intel-parallel-studio/cluster.2019.5
+
+
+#Define paths for locating the executable.
+export EXE_DIR=/home/your_executable_directory
+export RESULTS_HOME=/home/n$SLURM_JOB_NUM_NODES
+cd $RESULTS_HOME
+
+
+mpirun -n $SLURM_NTASKS -ppn $SLURM_NTASKS_PER_NODE $EXE_DIR/your_executable initial ifile &lt; $RESULTS_HOME/setup.txt &amp;&gt; sphng_setup.o
+</code></pre>
+<h2 id="3-loading-of-modules">3. Loading of modules</h2>
+<p>During the technical commissioning phase, we found that some users were loading modules in a sequence such that second module was interfering with the first module. As for example, suppose that you want to use <code>Intel</code> compilers, then it is sufficient to use the following module</p>
+<pre><code class="language-bash">$ module load intel-parallel-studio/cluster.2019.5
+</code></pre>
+<p>If you plan to use one API compilers, then it is not a good idea to load one API compiler first and then load the parallel studio. For example the following will not give you the desired result as the second module load <code>Intel-parallel-studio</code> may over ride the first one i.e. <code>intel-oneapi-compilers</code>. </p>
+<pre><code class="language-bash">$ module load intel-oneapi-compilers/2021.2.0/3q6eev
+$ module load intel-parallel-studio/cluster.2019.5/aveeft
+</code></pre>
+<h2 id="4-some-common-and-useful-module-combinations">4. Some common and useful module combinations</h2>
+<p>In this section, we present a brief combination of some of the useful module combinations that our users asked us during the technical commissioning. </p>
+<h4 id="4-1-intel-compiler-intel-mpi">4. 1. Intel Compiler + Intel MPI</h4>
+<pre><code class="language-bash">$ module load intel-parallel-studio/cluster.2019.5/aveeft
+</code></pre>
+<h4 id="42-intel-one-api-compiler-and-intel-one-api-mpi">4.2. Intel One API compiler and Intel One API MPI</h4>
+<pre><code class="language-bash">$ module load intel-oneapi-compilers/2021.2.0/3q6eev
+$ module load intel-oneapi-mpi/2021.2.0/jjwa2o
+</code></pre>
+<h4 id="43-amd-aocc-compiler-and-openmpi">4.3. AMD AOCC compiler and OpenMPI</h4>
+<pre><code class="language-bash">$ module load aocc/3.0.0
+$ module load openmpi/4.0.5
+</code></pre>
+<h4 id="44-intel-compilers-2021-and-openmpi">4.4. Intel Compilers 2021 and OpenMPI</h4>
+<pre><code class="language-bash">$ module load intel-oneapi-compilers/2021.2.0
+$ module load openmpi4/intel/4.0.5
+</code></pre>
+<h2 id="5-suggested-compiler-flags">5. Suggested Compiler Flags</h2>
+<h4 id="5-1-intel">5. 1. Intel</h4>
+<p>In order to use the Intel compilers optimally on the  new <strong>DIaL3</strong> system consisting of <strong>AMD EPYC</strong> processors, we suggest the following flags.</p>
+<table>
+<thead>
+<tr>
+<th>Compiler</th>
+<th>Suggested Flags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Intel C Compiler</strong></td>
+<td><em>-O3 -march=core-avx2 -fma -ftz -fomit-frame-pointer</em></td>
+</tr>
+<tr>
+<td><strong>Intel C++ Compiler</strong></td>
+<td><em>-O3 -march=core-avx2 -fma -ftz -fomit-frame-pointer</em></td>
+</tr>
+<tr>
+<td><strong>Intel Fortran Compiler</strong></td>
+<td><em>-O3 -march=core-avx2 -align array64byte -fma -ftz -fomit-frame-pointer</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="52-gnu">5.2. GNU</h4>
+<table>
+<thead>
+<tr>
+<th>Compiler</th>
+<th>Suggested Flags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>gcc compiler</strong></td>
+<td><em>-O3 -march=znver1 -mtune=znver1 -mfma -mavx2 -m3dnow -fomit-frame-pointer</em></td>
+</tr>
+<tr>
+<td><strong>g++ compiler</strong></td>
+<td><em>-O3 -march=znver1 -mtune=znver1 -mfma -mavx2 -m3dnow -fomit-frame-pointer</em></td>
+</tr>
+<tr>
+<td><strong>gfortran compiler</strong></td>
+<td><em>-O3 -march=znver1 -mtune=znver1 -mfma -mavx2 -m3dnow -fomit-frame-pointer</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="53-aocc">5.3. AOCC</h4>
+<table>
+<thead>
+<tr>
+<th>Compiler</th>
+<th>Suggested Flags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>clang compiler</strong></td>
+<td><em>-O3 -march=znver1 -mfma -fvectorize -mfma -mavx2 -<br/>m3dnow -floop-unswitch-aggressive -fuse-ld=lld</em></td>
+</tr>
+<tr>
+<td><strong>clang++ compiler</strong></td>
+<td><em>-O3 -march=znver1 -mfma -fvectorize -mfma -mavx2 -m3dnow -fuse-ld=lld</em></td>
+</tr>
+<tr>
+<td><strong>Fortran clang compiler</strong></td>
+<td><em>-O3 -mavx -fplugin-arg-dragonegg-llvm-codegen-op-<br/>timize=3 -fplugin-arg-dragonegg-llvm-ir-optimize=3</em></td>
+</tr>
+</tbody>
+</table>
+<p>Please be advised that the suggested compiler flags are general based on the <strong>AMD EPYC</strong> processors. They may or may not work for you.</p>
+<h2 id="6-flags-and-modules-tested-during-technical-commissioning">6. Flags and modules tested during Technical Commissioning</h2>
+<p>HPE suggested us to use some flags for the benchmarks that were used for checking the system performance and for procurement. On <strong>DIaL3</strong>, we tested 3 applications. We present the optimal combination of module and flags that we used for compilation and execution below.</p>
+<p>Note: We need to take permissions before mentioning the application name. Hence, the name of the application is not mentioned below.</p>
+<h4 id="61-application-1">6.1. Application 1</h4>
+<h6 id="modules-used">Modules used</h6>
+<pre><code class="language-bash">$ module load intel-oneapi-compilers 
+$ module load openmpi4/intel/4.0.5 
+</code></pre>
+<h6 id="flags-used">Flags used</h6>
+<pre><code class="language-bash">#Compiler/Wrapper name
+F90 = mpif90
+
+#Flags used
+FFLAGS = -cpp -assume buffered_io -march=core-avx2 -align array64byte -fma -ftz -fomit-frame-pointer -O3 -ip -free
+</code></pre>
+<h4 id="62-application-2">6.2. Application 2</h4>
+<h6 id="modules-used_1">Modules used</h6>
+<pre><code class="language-bash">$ module load intel-parallel-studio/cluster.2019.5 
+</code></pre>
+<h6 id="flags-used_1">Flags used</h6>
+<pre><code class="language-bash">#Compiler/Wrapper name
+F90 = mpiifort
+
+#Flags used
+FFLAGS= -O3 -mavx2 -mfma -mcmodel=medium \
+            -warn uninitialized -warn truncated_source\
+            -warn interfaces -nogen-interfaces
+</code></pre>
+<h4 id="63-application-3">6.3. Application 3</h4>
+<h6 id="modules-used_2">Modules used</h6>
+<pre><code class="language-bash">$ module load intel-parallel-studio/cluster.2019.5
+</code></pre>
+<h6 id="flags-used_2">Flags used</h6>
+<pre><code class="language-bash">#Compiler/Wrapper name
+F90 = mpiifort
+
+#Flags used
+FFLAGS= -qopenmp -mavx2 -mfma  -O3 -ip -Ofast
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../FAQ/" class="btn btn-neutral float-right" title="Frequently asked questions">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../Analyse_code/Debug_code/" class="btn btn-neutral" title="Debug your Code"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Analyse_code/Debug_code/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../FAQ/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
